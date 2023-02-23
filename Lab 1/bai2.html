@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  html{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 40%;
+    margin: auto;
+  }
+
+  img{
+    width: 65px;
+    padding: 4px;
+  }
+
+  div{
+    padding: 2px;
+    margin: 20px 20px 0 20px;
+    padding-left: 0px;
+    margin-left: 0;
+  }
+
+  ul{
+    list-style: none;
+    padding: 0;
+  }
+
+  h1, h2, h3, span, p{
+    margin-left: 5px;
+  }
+
+  li{
+    border-radius: 4px;
+    margin-top: 2px;
+    margin-top: 2px;
+    padding: 2px 2px;
+  }
+
+  img::after{
+    clear: both;
+    content: "";
+    display: block;
+  }
+
+</style>
+<body>
+  <div style="background-color: rgb(103,172,92); border-radius: 4px;     padding-bottom: 10px;
+  ">
+    <h1 style="color:white;">Welcome to My Homepage</h1>
+    <span style="color:white;">Use the menu to select different Stylesheets</span>
+  </div>
+  <div>
+    <ul>
+      <li style="color:white; background-color: rgb(103,172,92); font-weight: 700;">Menu 1</li>
+      <li style="background-color: #ccc;">Menu 2</li>
+      <li style="background-color: #ccc;">Menu 3</li>
+      <li style="background-color: #ccc;">Menu 4</li>
+    </ul>
+  </div>
+  <div>
+    <h1>Same Page Different<br>Stylesheets</h1>
+    <div>
+      <img src="./demo.png" style="float: left;" alt="">
+      <p style="" > This is a demonstration of how different stylesheets can change the layout of your HTML page. You can change the layout of this page by selecting different stylesheets in the menu, or by selecting one of the following links:<br>
+        <a href="">Stylesheet1, </a>
+        <a href="">Stylesheet2, </a>
+        <a href="">Stylesheet3, </a>
+        <a href="">Stylesheet4</a></p>
+    </div>   
+  </div>
+  <div>
+    <h2>No Styles</h2>
+    <div>
+      <img src="./demo.png" style="float: right;" alt="">
+      <p>This page uses DIV elements to group different sections of the HTML page. Click here to see how the page looks like with no stylesheet.</p>
+    </div>   
+  </div>
+  <div style="background-color: rgb(86,162,225); padding: 10px 0; border-radius: 5px">
+    <h3 style="color: white; padding: 6px 0;">Side-Bar</h3>
+    <p style="color: white;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+  </div>
+</body>
+</html>
