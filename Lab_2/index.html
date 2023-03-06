@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  <title>PRICKLES & CO</title>
+</head>
+<body>
+
+<div class="main">
+  <div class="header">
+    <div class="title">PRICKLES & CO</div>
+    <div class="menu">
+      <ul>
+        <li>Shop</li>
+        <li>About</li>
+        <li>FAQ</li>
+        <li>Contact</li>
+      </ul>
+    </div>
+    <div class="contact">Call Us Now! 123-456-7890</div>
+  </div>
+  <div class="main-content">
+    <div class="thumbnail">
+      <div class="logo-container">
+        <div class="text">E S T B</div>
+        <div class="logo"></div>
+        <div class="text">2 0 2 3</div>
+      </div>
+      <h1>PRICKLES & CO</h1>
+      <h6>BRING NATURE INDOORS</h6>
+      <div class="buy-btn btn">Shop Now</div>
+    </div>
+    <div class="production-container">
+      <div class="product-1">
+        <h3>CACTI</h3>
+        <hr>
+        <div class="collection-btn btn">Shop Collection</div>
+      </div>
+      <div class="product-2">
+        <h3>PLANTS</h3>
+        <hr>
+        <div class="collection-btn btn">Shop Collection</div>
+      </div>
+      <div class="product-3">
+        <h3>SUCCULENTS</h3>
+        <hr>
+        <div class="collection-btn btn">Shop Collection</div>
+      </div>
+    </div>
+    <div class="picture-container">
+      <div class="picture about">
+        <h2>ABOUT US</h2>
+        <hr>
+        <p>I'm a paragraph. Click here to add own text and edit me. It's easy. Just click "Edit Text" or double click me add your own content and make changes to the font. Feee! free to drag and drop me anywhere you users know a little more about you.</p>
+        <p>This is a great space to write long text about your company and your services. You can use this space to go into a little more detail about your company. Talk about your team and what services you provide.</p>
+      </div>
+      <div class="picture two">
+        <img src="./images/pic6.jpg" alt="">
+        <img src="./images/pic4.jpg" alt="">
+      </div>
+      <div class="picture"><img src="./images/pic1.jpg" alt=""></div>
+      <div class="picture sale-off">
+        <h1>BUY ONLINE NOW & GET 10% OFF!</h1>
+        <div class="buy-btn btn">Shop Now</div>
+      </div>
+    </div>
+
+    <div class="form-container">
+      <form action="">
+        <h2>FOR SPECIAL REQUESTS & ORDERS</h2>
+        <hr>
+        <div class="form-name-container">
+          <div class="form-item-container">
+            <label for="first-name" >First Name *</label>
+            <input type="text" class="form-name" id="first-name">
+          </div>
+          <div class="form-item-container two">
+            <label for="last-name" >Last Name *</label>
+            <input type="text" class="form-name two" id="last-name">
+          </div>
+        </div>       
+        <div class="form-item-container">
+          <label for="email">Email *</label>
+          <input type="text" id="email">
+        </div>
+        <div class="form-item-container">
+          <label for="phone">Phone</label>
+          <input type="text" id="phone">
+        </div>
+        <div class="form-item-container">
+          <label for="message">Message</label>
+          <input type="text" id="message">
+        </div>  
+        <input type="button" value="Send" class="btn">
+      </form>
+    </div>
+
+  </div>
+  <div class="chat-box btn"><i class="fa-solid fa-comments"></i>Let's Chat</div>
+</div>
+
+</body>
+
+<script>
+  const btn = document.querySelectorAll('.btn')
+
+  for(let i = 0; i < btn.length; i++ ) {
+    btn[i].onclick = () => window.alert('HEHEHEHEHEHEHE')
+  }
+</script>
+</html>
