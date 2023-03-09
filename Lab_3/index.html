@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="main">
+    <div class="title"><a href="">123$Học</a></div>
+    <div class="menu">
+      <div class="menu-item home"><a href="#">Trang Chủ</a></div>
+      <div class="menu-item"><a href="#">Trắc Nghiệm<i class="fa-solid fa-caret-down"></i></a>
+        <ul>
+          <li><a href="#">Chứng chỉ CNTT</a></li>
+          <li><a href="#">Trắc nghiệm Lập trình C</a></li>
+        </ul>
+      </div>
+      <div class="menu-item"><a href="#">Tin học Ứng dụng CB<i class="fa-solid fa-caret-down"></i></a>
+        <ul>
+          <li><a href="#">Word (Soạn thảo văn bản)</a></li>
+          <li><a href="#">Excel Căn bản</a></li>
+          <li><a href="#">Powerpoint (Thuyết trình)</a></li>
+          <li><a href="#">Máy tính và Sử dụng Windows</a></li>
+          <li><a href="#">Internet và Mạng máy tính</a></li>
+        </ul>
+      </div>
+      <div class="menu-item"><a href="#">Phân tích dữ liệu<i class="fa-solid fa-caret-down"></i></a>
+        <ul>
+          <li><a href="#">Excel (Phân tích số liệu)</a></li>
+          <li><a href="#">Data Analysis sử dụng Power BI</a></li>
+          <li><a href="#">Data Analysis sử dụng Tableau</a></li>
+        </ul>
+      </div>
+      <div class="menu-item"><a href="#">Thiết kế giao diện</a></div>
+      <div class="menu-item"><a href="#">Lập trình<i class="fa-solid fa-caret-down"></i></a>
+        <ul>
+          <li><a href="#">Kho tài liệu học lập trình</a></li>
+          <li><a href="#">Lập trình dùng ngôn ngữ Java</a></li>
+          <li><a href="#">Lập trình dùng ngôn ngữ C/C++</a></li>
+          <li><a href="#">lập trình với C#</a></li>
+          <li><a href="#">Lập trình nhúng STM32</a></li>
+        </ul>
+      </div>
+      <div class="menu-item"><a href="#">Tin học Trẻ<i class="fa-solid fa-caret-down"></i></a>
+        <ul>
+          <li><a href="#">Lập trình Scratch</a></li>
+          <li><a href="#">Tự động hóa & Robot</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+<script>
+  let item = document.querySelectorAll('.menu-item > a')
+  let subMenuList = document.querySelectorAll('ul')
+
+  for (let i = 0; i < item.length; i++){
+    item[i].onclick = function(e){
+      let subMenu = item[i].parentElement.querySelector('ul')
+      for(let j = 0; j < item.length; j++){
+          if(subMenuList[j]) subMenuList[j].classList.remove("unhide")
+          item[j].classList.remove('white')
+        }
+        e.target.classList.add("white")
+      if(subMenu) {
+        subMenu.classList.add('unhide')
+      }
+    }
+  }
+</script>
+</html>
