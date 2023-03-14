@@ -63,13 +63,20 @@
   for (let i = 0; i < item.length; i++){
     item[i].onclick = function(e){
       let subMenu = item[i].parentElement.querySelector('ul')
+      let isOpen
+      if(subMenu)
+        isOpen = subMenu.classList.contains('unhide')
+      else
+        isOpen = e.target.classList.contains("white")
       for(let j = 0; j < item.length; j++){
-          if(subMenuList[j]) subMenuList[j].classList.remove("unhide")
-          item[j].classList.remove('white')
-        }
+        if(subMenuList[j]) 
+          subMenuList[j].classList.remove("unhide")
+        item[j].classList.remove('white')
+      }
+      if(!isOpen){
         e.target.classList.add("white")
-      if(subMenu) {
-        subMenu.classList.add('unhide')
+        if(subMenu)
+          subMenu.classList.add('unhide')
       }
     }
   }
