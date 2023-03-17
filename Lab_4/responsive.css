@@ -1,0 +1,24 @@
+@media only screen and (max-width: 600px) {
+  .row{
+    flex-direction: column;
+  }
+
+  [class*=col-]{
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 800px) and (min-width: 600px) {
+  .row{
+    flex-direction: column;
+  }
+
+  [class*=col-]{
+    width: 100%;
+  }
+
+  .col-3.list{
+    width: calc(100%/3);
+  }
+  
+}
