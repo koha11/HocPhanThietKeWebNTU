@@ -1,0 +1,118 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 16px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+  height: 100%;
+}
+
+[class*=grid]{
+  display: grid;
+  position: relative;
+  /* padding: 24px 0; */
+  margin-bottom: 16px;
+}
+
+.grid-container{
+  width: 80%;
+  float: right;
+  margin-left: 40px;
+}
+.grid-container::after{
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.grid-two-column-28{
+  grid-template-columns: 20% 80%;
+  height: 100%;
+  /* column-gap: 20px; */
+}
+
+.grid-one-column{
+  grid-template-columns: 100%;
+}
+
+.grid-two-column{
+  /* grid-template-columns: 50% 50%; */
+  grid-template-columns: repeat(2,1fr); /*2 col tren 1 row voi width chia deu*/
+  /* column-gap: 20px; */
+}
+
+.about li{
+  list-style: none;
+}
+
+.grid-four-column{
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+.student-tab{
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: black;
+  z-index: 10;
+  width: 20%;
+}
+
+.student-tab img{
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  border-radius: 8px solid #333;
+  margin-top: 20px;
+}
+
+.title{
+  color: blue;
+  padding: 4px 16px;
+}
+.title::after{
+  width: 40px;
+  height: 4px;
+  content: "";
+  display: block;
+  background-color: aquamarine;
+}
+
+.about img{
+  height: 45vh;
+  width: 100%;
+}
+
+.fact{
+  background-color: aliceblue;
+}
+
+.fact .icon{
+  font-size: 40px;
+  color: blue;
+}
+
+.fact .grid-four-column{
+  padding: 0 32px;
+}
+
+.resume ul{
+  margin: 10px 0px 10px 10px;
+}
+
+.resume span{
+  background-color: blanchedalmond;
+  padding: 4px 8px;
+}
+/* 
+.resume li, .resume i {
+  margin-top: 10px;
+  margin-bottom: 10px;
+} */
