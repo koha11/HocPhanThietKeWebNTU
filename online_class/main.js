@@ -13,9 +13,8 @@ const app = {
       btn[i].onclick = function() {
         let aValue = parseInt(a.value)
         let bValue = parseInt(b.value)
-        let x = _this.validate(aValue,bValue)     
-        console.log(_this.validate(aValue,bValue)  ) 
-        if(x == true)
+        let x = (_this.validate(a.value) && _this.validate(b.value)) ? true : (_this.validate(a.value) ? 'b' : 'a')    
+        if(x === true)
           {
             let type = btn[i].getAttribute('id')
 
@@ -47,13 +46,14 @@ const app = {
     }
 
   },
-  validate: (a,b) => {
-    if(!a) 
-      return 'a'
-    if(!b) 
-      return 'b'
-    else
-      return true    
+  validate: (x) => {
+    if(x.length === 0)
+      return false;
+    for(let i = 0; i < x.length; i++)
+      if(isNaN(parseInt(x[i])))
+        return false;
+
+    return true; 
   },
   reset: (a,b) => {
     a.value = ''
