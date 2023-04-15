@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+  form{
+    margin: auto;
+    border-radius: 40px;
+    border: 2px solid green;
+    width: 40%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  li{
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+  }
+
+  input{
+    margin: 8px 0;
+    padding: 8px 16px;
+  }
+
+  h1{
+    color: aqua;
+  }
+
+  button{
+    padding: 8px 0px;
+    width: 80px;
+    cursor: pointer;
+    color: white;
+    background-color: green;
+    text-align: center;
+    border: solid black 1px;
+  }
+
+  button:hover{
+    opacity: 0.7;
+  }
+
+  .btn-container{
+    margin-top: 20px;
+  }
+  
+
+
+  .error{
+    color: red;
+    font-style: italic;
+    margin-top: 10px;
+  }
+
+</style>
+<body>
+    <form action="">
+      <h1>FORM TÍNH TOÁN</h1>
+      <li>
+        <label for="#gta">a:</label>
+        <input id="gta" type="text">
+      </li>
+      <li>
+        <label for="#gtb">b:</label>
+        <input id="gtb" type="text">
+      </li>
+      <li>
+        <label for="">Kết quả:</label>
+        <input readonly id="result" type="text">
+      </li>
+      <div class="btn-container">
+        <button type="button" id="plus">+</button>
+        <button type="button" id="minus">-</button>
+        <button type="button" id="multiply">*</button>
+        <button type="button" id="divide">/</button>
+        <button type="button" id="reset">Reset</button>
+      </div>
+      <span class="error"></span>
+    </form>
+</body>
+<script src="./main.js"></script>
+</html>

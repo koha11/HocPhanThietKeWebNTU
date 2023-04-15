@@ -1,0 +1,210 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 16px;
+  font-family: monospace;
+}
+
+.row{
+  width: 100%;
+  height: 100%;
+}
+
+[class*=col-]{
+  display: grid;
+}
+
+.col-25-75{
+  grid-template-columns: 25% 75%;
+}
+.col-3-7{
+  grid-template-columns: 30% 70%;
+}
+.col-5-5{
+  grid-template-columns: repeat(4,1fr);
+}
+.col-7-3{
+  grid-template-columns: 70% 30%;
+}
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flex.separate{
+  justify-content: space-between;
+}
+
+.flex.reverse{
+  flex-direction: column;
+}
+
+li{
+  padding: 24px 12px;
+}
+
+ul{
+  list-style: none;
+}
+
+ul.horizontal{
+  display: inline-block;
+}
+
+img{
+  width: 100%;
+}
+
+/* HEADING  */
+.logo{
+  height: 40px;
+  width: 140px;
+  margin: auto;
+}
+
+.heading{
+  padding: 16px 4px;
+}
+
+.heading .tools img{
+  height: 40px;
+  width: 40px;
+}
+
+.search-bar{
+ border-radius: 40px;
+ border: solid 1px greenyellow;
+ width: 400px;
+ height: 40px;
+}
+
+
+/* HOME  */
+.home{
+  padding: 8px 16px;
+}
+
+.home .category{
+  box-shadow: 0 0 10px rgba(1, 1, 1, 0.1);
+}
+
+.category h2{
+  display: inline-block;
+}
+
+.category .icon{
+  font-size: 30px;
+}
+
+.category .item:hover{
+  background-color: azure;
+  color: green;
+  cursor: pointer;
+}
+
+[class*=btn-]{
+  padding: 8px 24px;
+  margin: 12px 4px;
+}
+
+[class*=btn-]:hover{
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.btn-read{
+  background-color: white;
+}
+
+.btn-buy{
+  background-color: green;
+  color: white;
+}
+
+.flex.unset{
+  justify-content: unset;
+}
+
+.background{
+  background-image: url(./images/home3.jpg);
+  background-size: 100% 100%;
+  height: 400px;
+}
+
+.menu li:hover{
+  color: green;
+  cursor: pointer;
+}
+
+.sub-menu-container{
+  position: relative;
+}
+
+.menu .sub-menu-container:hover .sub-menu{
+  display: unset;
+  color: black;
+}
+
+.sub-menu{
+  /* display: none; */
+  position: absolute;
+  top: 65px;
+  background-color: white;
+  box-shadow: 0 0 10px 0 rgba(1, 1, 1, 0.1);
+}
+
+
+/* BATH ROOM  */
+.bath-room{
+  padding: 8px 16px;
+}
+
+.bath-room .content .flex{
+}
+
+.price{
+  color: red;
+  font-weight: 600;
+}
+
+
+/* FOOTER  */
+.footer{
+  padding: 8px 16px;
+  /* position: relative; */
+}
+
+.footer img{
+  padding: 4px 8px;
+}
+
+.footer .side{
+  background-color: black;
+  color: #ccc;
+  height: 40px;
+
+  position: absolute;
+  width: 100%;
+  left: 0;
+  margin-top: 20px;
+}
+
+.footer .side span{
+  padding: 0 16px;
+}
+
+img.icon{
+  height: 15px;
+  width: 15px;
+  margin-right: 10px;
+}
+
+i.icon{
+  font-size: 16px;
+  margin-right: 5px;
+}
+

@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{  
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-family: 'Poppins', sans-serif;
+  font-size: 24px;
+}
+
+body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1em;
+  background-color: #222344;
+  min-height: 100vh;
+}
+
+nav{
+  background-color: #333;
+  padding: 16px 48px;
+  border-radius: 16px;
+  position: relative;
+  box-shadow: 0 0 10px 1px #000;
+}
+
+a{
+  text-decoration: none;
+  color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+i{
+}
+span{
+  font-size: 0.5em;
+  color: #333;
+  position: absolute;
+  bottom: 16px;
+  line-height: 15px;
+  z-index: 10;
+}
+
+li{
+  display: inline-block;
+  list-style: none;
+  padding: 36px 24px;
+  cursor: pointer;
+}
+
+.active-status{
+  position: absolute;
+  transition: .5s;
+  content: "";
+  left: 48px;
+}
+.active-status::before{
+  background-color: #29fd53;
+  content: "";
+  position: absolute;
+  width: 90%;
+  height: 15px;
+  /* bottom: 20px; */
+  bottom: 0;
+  border-radius: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.active-status::after{
+  background-color: #29fd53;
+  content: "";
+  position: absolute;
+  top: 20px;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #29fd53,
+  60px 60px #29fd53,
+  0 50px #29fd53,
+  50px 0px #29fd53;
+  left: 50%;
+  transform: rotate(45deg) translateX(-50%);
+  animation: rotate 1s ease-in-out infinite;
+}
+
+@keyframes rotate {
+  0%,100%{
+    transform: rotate(35deg) translateX(-50%);
+  }
+  55%{
+    transform: rotate(55deg) translateX(-50%);
+  }
+}
+
+
+.active-status span, .active-status i{
+  height: 24px;
+  width: 24px;
+}
+
+.active a{
+  color: #29fd53;
+  transition: color .5s linear;
+}
