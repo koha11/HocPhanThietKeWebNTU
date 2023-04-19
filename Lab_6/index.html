@@ -95,7 +95,7 @@
         validateLogin : (user, pass) =>{
             let error = document.querySelector('#dang_nhap .error')
 
-            if(user == '' || pass == '')
+            if(user == '' || pass == ''|| user.length < 4 || pass.length < 8)
                 error.innerText = 'vui lòng cung cấp thông tin'
             else
                 error.innerText = 'Ban da dang nhap thanh cong'
