@@ -133,7 +133,7 @@
                         element.classList.remove('error-valid')
                     break
                 case 'register-password':
-                    if(value < 8)
+                    if(value.length < 8)
                     {
                         error.innerText = 'vui lòng nhập lai thông tin sai'
                         element.classList.add('error-valid')        
