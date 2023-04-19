@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=#, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>FORM</title>
+</head>
+<body>
+    <form id="dang_nhap" class="">
+        <h2>FORM ĐĂNG NHẬP</h2>
+        <div class="input-container">
+            <input type="text" id="login-user" placeholder="Tên đăng nhập">
+            <ion-icon name="person-circle-outline"></ion-icon>        
+        </div>
+        <div class="input-container">
+            <input type="password" id="login-password" placeholder="Mật khẩu">
+            <ion-icon name="eye-off-outline" class="hidden-password"></ion-icon>
+        </div>
+        <div class="btn-container">
+            <button type="button" class="login">Đăng nhập</button>
+            <button type="button" class="register">Đăng ký</button> 
+        </div>
+        <span class="error"></span>
+    </form>
+    <form id="dang_ky" class="hidden">
+        <h2>FORM ĐĂNG KÝ</h2>
+        <input type="text" id="register-user" class="register-value" placeholder="Tên đăng nhập">
+        <input type="text" id="register-email" class="register-value" placeholder="Email">
+        <div class="input-container">
+            <input type="password" id="register-password" class="register-value" placeholder="Mật khẩu">
+            <ion-icon name="eye-off-outline" class="hidden-password"></ion-icon>
+        </div>
+        <div class="input-container">
+            <input type="password" id="register-confirm-password" class="register-value" placeholder="Nhập lại mật khẩu">
+            <ion-icon name="eye-off-outline" class="hidden-password"></ion-icon>
+        </div>
+        <div class="btn-container">
+            <button type="button" class="register">Đăng ký</button>
+            <button type="button" class="reset">Reset</button>
+        </div>
+        <span class="error"></span>
+    </form>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+<script>
+    const loginForm = document.querySelector('#dang_nhap')
+    const registerForm = document.querySelector('#dang_ky')
+
+    const app = {
+        handleEvent: () =>{
+          
+            let loginUser = loginForm.querySelector('#login-user')
+            let loginPassword = loginForm.querySelector('#login-password')
+            let loginBtn = loginForm.querySelector('.login')
+            let registerBtnLogin = loginForm.querySelector('.register')
+            
+            let passwordEyes = document.querySelectorAll('.hidden-password')
+
+            let registerBtn = registerForm.querySelector('.register')
+            let registerInput = registerForm.querySelectorAll('.register-value')
+            let registerResetBtn = registerForm.querySelector('.reset')
+
+            loginBtn.onclick = () => {
+                app.validateLogin(loginUser.value, loginPassword.value)
+            }
+
+            registerBtnLogin.onclick = () => {
+                registerForm.classList.remove('hidden')
+                loginForm.classList.add('hidden')
+            }
+
+            registerBtn.onclick = () => {
+                for (const element of registerInput) {
+                    app.validateRegister(element)
+                }       
+            }
+
+            registerResetBtn.onclick = () => {
+                for (const element of registerInput) {
+                    app.reset(element)
+                }    
+            }
+
+            for (let i = 0; i < passwordEyes.length; i++) {
+                passwordEyes[i].onclick = () => {
+                    app.unHidePassword(passwordEyes[i])
+                }
+                
+            }
+
+        },
+        validateLogin : (user, pass) =>{
+            let error = document.querySelector('#dang_nhap .error')
+
+            if(user == '' || pass == '')
+                error.innerText = 'vui lòng cung cấp thông tin'
+            else
+                error.innerText = 'Ban da dang nhap thanh cong'
+        },
+
+        validateRegister: (element) => {
+            let type = element.getAttribute('id')
+            let value = element.value
+            let password = registerForm.querySelector('#register-password').value
+            let error = registerForm.querySelector('.error')
+            if(value == ''){
+                error.innerText = 'vui long nhap lai thong tin sai'
+                element.classList.add('error-valid')
+            }
+            else
+            switch(type){
+                case 'register-user':
+                    if(value.length < 4)
+                    {
+                        error.innerText = 'vui long nhap lai thong tin sai'
+                        element.classList.add('error-valid')
+                        break
+                    }
+                    else
+                        element.classList.remove('error-valid')
+                    break
+
+                case 'register-email':
+                    if(!value.match(/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/))
+                    {
+                        error.innerText = 'vui long nhap lai thong tin sai'
+                        element.classList.add('error-valid')        
+                    }
+                    else
+                        element.classList.remove('error-valid')
+                    break
+                case 'register-password':
+                    if(value < 8)
+                    {
+                        error.innerText = 'vui long nhap lai thong tin sai'
+                        element.classList.add('error-valid')        
+                    }
+                    else
+                        element.classList.remove('error-valid')
+                    break
+                case 'register-confirm-password':
+                    if(value != password || value == '')
+                    {
+                        error.innerText = 'vui long nhap lai thong tin sai'
+                        element.classList.add('error-valid')        
+                    }
+                    else
+                        element.classList.remove('error-valid')
+                default:
+                    error.innerText = 'Ban da dang ky thanh cong'            
+            }            
+        },
+        reset: (element) => {
+            element.value = ''            
+        },
+        unHidePassword: (element) => {
+            let inputElement = element.closest('.input-container').querySelector('input')
+
+            if(inputElement.type === 'text')
+            {
+                element.name = 'eye-off-outline'
+                inputElement.type = 'password'
+            }
+            else
+            {
+                element.name = 'eye-outline'
+                inputElement.type = 'text'
+            }
+
+        }
+    }
+
+    app.handleEvent()
+
+</script>
+</html>
