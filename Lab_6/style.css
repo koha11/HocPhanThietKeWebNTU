@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.hidden{
+    display: none;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 36px;
+    width: 50%;
+    position: relative;
+    border-radius: 40px;
+    border: solid 2px #ccc;
+    padding: 32px 0;
+}
+
+h2{
+    display: block;
+    background-color: white;
+    position: absolute;
+    top: -6%;
+    font-weight: 700;
+    color: green;
+    padding: 0 8px;
+}
+
+button{
+    padding: 8px 32px;
+    border: 1px solid black;
+    cursor: pointer;
+    margin-top: 24px;
+}
+
+input{
+    padding: 12px 8px;
+    width: 80%;
+    border-radius: 40px;
+    border: 1px solid #ccc;
+    margin: 8px 0;
+}
+.input-container input{
+    width: 100%;
+}
+.input-container{
+    position: relative;
+    width: 80%;
+}
+ion-icon{
+    position: absolute;
+    right: 10px;
+    font-size: 24px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+ion-icon:hover{
+    opacity: 0.4;
+}
+#dang_nhap button{
+    background-color: aqua;
+    border-radius: 40px;
+}
+.btn-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.error{
+    color: red;
+    margin-top: 16px;
+    padding: 8px 4px;
+    font-size: 16px;
+}
+.error-valid{
+    border: 1px solid red !important;
+}
+
+#dang_ky form{
+    border: #a9d18e;
+    color: green;
+}
+#dang_ky button{
+    background-color: #a9d18e;
+    border: solid 1px #2f528f;
+    border-radius: 10px;
+    color: green;
+    font-weight: 600;
+
+}
+#dang_ky input{
+    border: solid 1px #2f528f;
+    border-radius: 10px;
+
+}
