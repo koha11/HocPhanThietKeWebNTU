@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <title>Document</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    form{
+      height: 30vh;
+      width: 70%;
+      background-color: royalblue;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+    }
+    form div{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      flex-direction: column;
+    }
+    label, input{
+      padding:8px 0;
+    }
+    .btn{
+      margin-top: 20px;
+      width: 10%;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <form action="">
+    <div>
+      <label for="">Số điện thoại: </label>
+      <input id="number" type="text"></div>
+    <div>
+      <label for="">Email: </label>
+      <input id="email" type="text">
+    </div>
+
+    <input type="button" class="btn" value="SUBMIT">    
+  </form>
+</body>
+<script>
+ $(document).ready(function() {
+  $('.btn').click(function(){
+    let phone = $('#number').val()
+    let email = $('#email').val()
+
+    if(validatePhone(phone) && validateEmail(email))
+      window.alert('Ban da nhap thanh cong')
+
+  })
+
+  function validatePhone(value){
+    let logic = true
+    for (let i = 0; i < value.length; i++) {
+      if(parseInt(value[i]) === 'null')
+        logic = false
+      if(value[0] !== '0')
+        logic = false
+      if(value.length !== 10)
+        logic = false
+    }
+
+    if(!logic)
+      window.alert('VUI LONG NHAP DUNG SDT')
+    else 
+      return true
+  }
+
+  function validateEmail(value){
+    if(value.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/))
+      return true
+    else
+      window.alert('VUI LONG NHAP DUNG EMAIL')  
+  }
+})
+</script>
+</html>

@@ -1,0 +1,110 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 14px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.main{
+  position: relative;
+  top: 100px;
+  width: 100%;
+  min-height: 60px;
+  background-color: cadetblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.main .title{
+  flex: 1;
+  padding: 8px;
+}
+
+.title a, .home a{
+  color: #fff !important;
+  text-decoration: none;
+  opacity: 1 !important;
+}
+
+.main .menu{
+  flex: 9;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+}
+
+.menu-item{
+  padding: 8px;
+  position: relative;
+}
+
+.menu-item > a, .sub-menu-item > a{
+  color: #fff;
+  opacity: 0.5;
+  text-decoration: none;
+  display: inline-block;
+  padding: 8px;
+}
+
+.menu-item ul{
+  list-style: none;
+  position: absolute;
+  top: 40px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: max-content;
+  display: none;
+}
+.sub-menu-item{
+  /* display: none; */
+}
+
+.menu-item li{
+  text-align: left; 
+  padding: 8px 16px;
+}
+
+.menu-item li:hover{
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.menu-item li a{
+  text-decoration: none;
+  color: black;
+}
+
+.menu-item > a:hover{
+ opacity: 0.8; 
+}
+
+.sub-menu-item ul{
+  top: 82px;
+  left: 170px;
+}
+
+i{
+  margin-left: 4px;
+  font-size: 10px;
+}
+
+.unhide{
+  display: block !important;
+}
+.white{
+  opacity: 1 !important;
+}

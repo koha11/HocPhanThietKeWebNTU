@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <title>Document</title>
+</head>
+<body>
+  <div class="tab-wrapper">
+    <ul class="tab">
+      <li><a href="#tab-new" class="active">Sản phẩm mới</a></li>
+      <li><a href="#tab-selling">Bán chạy</a></li>
+      <li><a href="#tab-sale">Giảm giá</a></li>
+    </ul>
+    <div class="tab-content">
+      <div class="tabitem active" id="tab-new">Tab sản phẩm mới</div>
+      <div class="tabitem" id="tab-selling">Tab sản phẩm bán chạy</div>
+      <div class="tabitem" id="tab-sale">Tab sản phẩm giảm giá</div>
+    </div>
+  </div>
+  <script>
+    $(document).ready(function(){
+      $('.tab a').click(function(e){
+        $('.tab a').removeClass('active')
+        $('.tabitem').removeClass('active')
+
+        let selector = $(e.target).attr('href') 
+        $(e.target).addClass('active')
+        $(selector).addClass('active')
+      })
+    })
+  </script>
+</body>
+
+</html>

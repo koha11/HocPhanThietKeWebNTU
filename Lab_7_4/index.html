@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <title>CALCULATOR</title>
+</head>
+<body class="flex">
+  <div class="calculator flex">
+    <h2>MÁY TÍNH CÁ NHÂN</h2>
+    <hr>
+    <input type="text" readonly>
+    <div class="container flex">
+      <ul class="calc-item flex">
+        <li class="value">1</li>
+        <li class="value">2</li>
+        <li class="value">3</li>
+        <li class="calc spec" id="plus">+</li>
+      </ul>
+      <ul class="calc-item flex">
+        <li class="value">4</li>
+        <li class="value">5</li>
+        <li class="value">6</li>
+        <li class="calc spec" id="minus">-</li>
+      </ul>
+      <ul class="calc-item flex">
+        <li class="value">7</li>
+        <li class="value">8</li>
+        <li class="value">9</li>
+        <li class="calc spec" id="multiply">x</li>
+      </ul>
+      <ul class="calc-item flex">
+        <li class="spec" id="delete">C</li>
+        <li class="spec value">0</li>
+        <li class="spec" id="result">=</li>
+        <li class="calc spec" id="devide">/</li>
+      </ul>
+    </div>
+  </div>
+</body>
+<script>
+  $(document).ready(function(){
+    const app = {
+      firstValue: '',
+      secondValue: '',
+      isHold: false,
+      state: '',
+      handle: function(){
+        let _this = this
+        $('.value').click(function(e){
+          let value = $(e.target).text()
+
+          if(_this.state != '' && !_this.isHold)
+            _this.reset()
+
+          if(!_this.isHold)
+          {
+            _this.firstValue += value
+            $('input').val(_this.firstValue)
+          }            
+          else
+          {
+            _this.secondValue += value 
+            $('input').val(_this.secondValue)
+          }                     
+        })
+
+        $('.calc').click(function(e){
+          $(e.target).addClass('hold')
+          _this.isHold = true
+          _this.calc($(e.target).text())
+          $('input').val('')
+        })
+
+        $('#result').click(function(e){
+          _this.isHold = false
+          if(isNaN(_this.result()))
+          {
+            _this.reset()
+          }
+          else
+          {
+            $('.calc').removeClass('hold')
+            $('input').val(`${_this.result()}`)
+          }
+        })
+
+        $('#delete').click(function(e){
+          _this.reset()
+        })
+      },
+      calc: function(operator){
+        switch(operator)
+        {
+          case '+':
+            this.state = '+'
+            break
+          case '-':
+            this.state = '-'
+            break
+          case 'x':
+            this.state = '*'
+            break
+          case '/':
+            this.state = '/'
+            break
+        }
+      },
+      result: function(){
+        switch(this.state){
+          case '+':
+            console.log(parseInt(this.firstValue) + parseInt(this.secondValue))
+            return parseInt(this.firstValue) + parseInt(this.secondValue)
+          case '-':
+            return parseInt(this.firstValue) - parseInt(this.secondValue)
+          case '*':
+            return parseInt(this.firstValue) * parseInt(this.secondValue)
+          case '/':
+            return parseInt(this.firstValue) / parseInt(this.secondValue)
+        }
+      },
+      reset: function(){
+        this.state = ''
+        this.firstValue = ''
+        this.secondValue = ''
+        $('.calc').removeClass('hold')
+        $('input').val('')
+      }
+    }
+    app.handle()
+  })
+</script>
+</html>
