@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <title>Máy rút tiền</title>
+</head>
+<body class="flex">
+  <div class="so-du">
+    <div>SỐ DƯ CỦA TÔI</div>
+    <h2 id="left-money"></h2>
+  </div>
+  <div class="main">
+    <div class="title">RÚT TIỀN MẶT</div>
+    <ul class="flex">
+      <div class="input-container flex">
+        <span>₫</span>
+        <input type="number" class="input-money" value="0">
+        <input type="button" value="TẤT CẢ" class="input-all-money">
+      </div>
+      <li class="mission flex" id="1">
+        <div class="flex">
+          <box-icon name='task'></box-icon><span>Nhiệm vụ 1</span>
+        </div>
+        <span class="money"></span>
+        <box-icon name='chevron-right'></box-icon>
+      </li>
+      <li class="mission flex" id="2">
+        <div class="flex">
+          <box-icon name='task'></box-icon><span>Nhiệm vụ 2</span>
+        </div>
+        <span class="money"></span>
+        <box-icon name='chevron-right'></box-icon>
+      </li>
+      <li class="mission flex" id="3">
+        <div class="flex">
+          <box-icon name='task'></box-icon><span>Nhiệm vụ 3</span>
+        </div>
+        <span class="money"></span>
+        <box-icon name='chevron-right'></box-icon>
+      </li>
+      <li class="mission flex" id="4">
+        <div class="flex">
+          <box-icon name='task'></box-icon><span>Nhiệm vụ 4</span>
+        </div>
+        <span class="money"></span>
+        <box-icon name='chevron-right'></box-icon>
+      </li>
+      <button type="button" class="withdraw">Rút tiền</button>
+      <button type="button" class="refresh-btn">refresh</button>
+    </ul>
+  </div>
+  <div class="mission-info flex">
+    <div class="mission-table">
+      <span class="close-table">X</span>
+      <h1>Thông tin nhiệm vụ</h1>
+      <ul>
+        <li class="mission-content"><b>Mã nhiệm vụ: </b><span name="id"></span></li>
+        <li class="mission-content"><b>Tên nhiệm vụ: </b><span name="mission"></span></li>
+        <li class="mission-content"><b>Thời gian hoàn thành: </b><span name="date"></span></li>
+        <li class="mission-content"><b>Trạng thái: </b><span name="status"></span></li>
+        <li class="mission-content"><b>Số tiền nhận được: </b><span name="money"></span></li>
+      </ul>
+      <button type="button" class="mission-btn">Đồng ý</button>
+    </div>
+  </div>
+</body>
+<script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+<script>
+  $(document).ready(function(){
+  const app = {
+    mission: [
+      'Like', 'Comment', 'Share', 'Call friend','Buy food','Express love with ur crush'    
+    ],
+    currentMissions: [4],
+    withdrawMoney: 0,
+    totalMoney: 0,
+    handleEvent: function(){
+      _this = this
+      $('.input-all-money').click(function(e){
+        $('.input-money').val(_this.totalMoney)
+      })
+      $('.withdraw').click(function(e){
+        _this.withdraw()
+        $('.input-money').val('0')
+      })
+      $('.mission').click(function(e){
+        $('.mission-info').show('500','linear',() => $('.mission-info').css('display', 'flex'))
+        setTimeout(() => _this.renderMissions($(e.target).closest('.mission').attr('id') - 1), 600)
+      })
+      $('.close-table').click(function(e){
+        $('.mission-info').hide('500')
+      })
+      $('.mission-btn').click(function(e){
+        $('.mission-info').hide('500')
+      })
+      $('.refresh-btn').click(function(e){
+        _this.render()
+      })
+
+    },
+    render: function(){
+      randomIndex = Math.round(Math.random()*10)
+      $('.input-money').val(this.withdrawMoney)
+      for(let i = 0; i < 4; i++)
+      {
+        let date = new Date
+        this.currentMissions[i] = {
+          id: Math.round(randomIndex * Math.random() * Math.random() * 10),
+          mission: () => {
+            if(!this.mission[randomIndex])
+              return this.currentMissions[i].mission()
+            else
+              return this.mission[randomIndex]
+          },
+          money: this.randomMoney(),
+          date: date.getDay() + Math.floor(Math.random()*10) + '/' + date.getMonth() + '/' + date.getFullYear()
+        }
+        $(`.mission#${i+1} .money`).text(`+ ${this.currentMissions[i].money} VNĐ`)
+      }
+      this.totalMoney = this.calcTotalMoney()
+      $('#left-money').text(this.totalMoney + 'đ')
+    },
+
+    renderMissions: function(index){
+      $(`.mission-content span[name = "id"]`).text(this.currentMissions[index].id)
+      $(`.mission-content span[name = "mission"]`).text(this.currentMissions[index].mission)
+      $(`.mission-content span[name = "date"]`).text(this.currentMissions[index].date)
+      console.log(this.currentMissions[index])
+      $(`.mission-content span[name = "status"]`).text('Hoàn thành')
+      $(`.mission-content span[name = "money"]`).text(this.currentMissions[index].money)
+    },
+
+    withdraw: function(){
+      this.withdrawMoney = parseInt($('.input-money').val())
+      let possible = this.withdrawMoney <= this.totalMoney
+      if(this.withdrawMoney == 0)
+        if(this.totalMoney != 0)
+          window.alert(`Vui lòng nhập số tiền muốn rút!`)
+        else
+          window.alert(`Bạn đã rút hết số tiền hiện có!`)
+      else if(possible)
+      {
+        window.alert(`Bạn đã rút tổng cộng ${this.withdrawMoney}đ!`)
+        this.totalMoney-= this.withdrawMoney
+        $('#left-money').text(this.totalMoney + 'đ')
+      }
+      else
+      {
+        window.alert(`Số dư không đủ để bạn thực hiện hành động này!`)
+      }
+    },
+    calcTotalMoney: function(){
+      let sum = 0
+      for(let i = 0; i < 4; i++)
+        sum += this.currentMissions[i].money
+      return sum
+    },
+    randomMoney: function(){
+      return Math.round(Math.random()*1000)*1000
+    },
+    start: function(){
+      this.render()
+      this.handleEvent()
+    }
+  }
+  app.start()
+})
+</script>
+</html>

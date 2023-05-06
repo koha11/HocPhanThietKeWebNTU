@@ -70,49 +70,25 @@
       let isOpen
 
       if(subMenu)
-        isOpen = $(subMenu).hasClass('unhide')
+        isOpen = $(subMenu).css('display') === 'block'
       else
         isOpen = $(e.target).hasClass('white')
 
-      $('ul.sub-menu-tier1').removeClass('unhide')
-      $('ul.sub-menu-tier2').removeClass('unhide')
+      $('ul.sub-menu-tier1').hide('500')
+      $('ul.sub-menu-tier2').hide('500')
       $('.menu-item > a').removeClass('white')
 
       if(!isOpen){
         $(e.target).addClass("white")
         if(subMenu)
-        $(subMenu).addClass('unhide')
+        $(subMenu).show('500')
       }
     })
 
     $('.sub-menu-item > a').click(function(e) {
       let subMenu = $(e.target).parent().find('ul.sub-menu-tier2')
-        $(subMenu).addClass('unhide')
-      
+        $(subMenu).show('500')      
     })
   })
-  // let item = document.querySelectorAll('.menu-item > a')
-  // let subMenuList = document.querySelectorAll('ul')
-
-  // for (let i = 0; i < item.length; i++){
-  //   item[i].onclick = function(e){
-  //     let subMenu = item[i].parentElement.querySelector('ul')
-  //     let isOpen
-  //     if(subMenu)
-  //       isOpen = subMenu.classList.contains('unhide')
-  //     else
-  //       isOpen = e.target.classList.contains("white")
-  //     for(let j = 0; j < item.length; j++){
-  //       if(subMenuList[j]) 
-  //         subMenuList[j].classList.remove("unhide")
-  //       item[j].classList.remove('white')
-  //     }
-  //     if(!isOpen){
-  //       e.target.classList.add("white")
-  //       if(subMenu)
-  //         subMenu.classList.add('unhide')
-  //     }
-  //   }
-  // }
 </script>
 </html>

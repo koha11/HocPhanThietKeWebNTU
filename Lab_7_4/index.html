@@ -69,10 +69,23 @@
         })
 
         $('.calc').click(function(e){
-          $(e.target).addClass('hold')
-          _this.isHold = true
-          _this.calc($(e.target).text())
-          $('input').val('')
+          if(_this.isHold === false && _this.firstValue !== '')
+          {
+            $(e.target).addClass('hold')
+            _this.isHold = true
+            _this.calc($(e.target).text())
+            $('input').val('')
+          }
+          else if(_this.isHold === true && _this.firstValue !== '' && _this.secondValue !== '') 
+          {
+            $('.calc').removeClass('hold')
+            $(e.target).addClass('hold')
+            _this.firstValue = _this.result()
+            _this.secondValue = ''
+            $('input').val(_this.firstValue)
+            _this.calc($(e.target).text())            
+          }
+          else _this.reset()
         })
 
         $('#result').click(function(e){

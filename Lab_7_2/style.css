@@ -51,26 +51,29 @@ html{
   position: relative;
 }
 
-.menu-item > a, .sub-menu-item > a{
+.menu-item > a{
   color: #fff;
   opacity: 0.5;
   text-decoration: none;
   display: inline-block;
   padding: 8px;
 }
+.sub-menu-item > a{
+  text-decoration: none;
+  display: inline-block;
+}
 
 .menu-item ul{
   list-style: none;
   position: absolute;
   top: 40px;
+  left: 60px;
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 6px;
   width: max-content;
   display: none;
-}
-.sub-menu-item{
-  /* display: none; */
+  z-index: 10;
 }
 
 .menu-item li{
@@ -88,12 +91,12 @@ html{
   color: black;
 }
 
-.menu-item > a:hover{
+.menu-item > li:hover{
  opacity: 0.8; 
 }
 
 .sub-menu-item ul{
-  top: 82px;
+  top: 60px;
   left: 170px;
 }
 
@@ -108,3 +111,4 @@ i{
 .white{
   opacity: 1 !important;
 }
+
