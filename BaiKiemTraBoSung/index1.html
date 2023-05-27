@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Dang Ky</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      .text-inline{
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      #hidePass:hover{
+        opacity: 0.8;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main position-fixed" style="width: 50rem;
+    height: 36rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: #ccc 1px solid;
+    border-radius: 20px;"    
+    >
+      <div class="container row" style="padding: 1rem 2rem;">
+        <div class="col-7 left-side">
+          <img src="https://www.freepnglogos.com/uploads/google-logo-png/file-google-logo-svg-wikimedia-commons-23.png" alt="" style="height: 1.5rem;">
+          <h4 class="py-3">Tạo Tài Khoản Google</h4>
+            <form class="mt-2" style="">
+              <div class="form-group row justify-content-between">
+                <div class="col-sm-1-5">
+                  <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Họ" style="border: none;border-bottom: #ccc solid 1px;">
+                </div>
+                <div class="col-sm-1-5">
+                  <input type="text" class="form-control" name="FirstName" id="FirstName" placeholder="Tên" style="border: none;border-bottom: #ccc solid 1px;">
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-sm-1-12 w-100 position-relative">
+                  <input class="w-100 form-control" type="email" class="form-control" name="" id="email" aria-describedby="emailHelpId" placeholder="Tên người dùng"style="border: none;border-bottom: #ccc solid 1px;">                 
+                  <select name="" id="" class="text-inline form-control-sm border-0 font-weight-lighter">
+                    <option value="">@gmail.com</option>
+                    <option value="">@gmail.com.vn</option>
+                  </select>
+                </div>
+                <div class="col-sm-1-12">
+                  <small id="emailHelpId" class="form-text text-muted">Bạn có thể sử dụng chữ cái, số và dấu chấm</small>
+                </div>
+                <div class="col-sm-1-12">
+                  <a href="#" class="text-primary text-decoration-none">Thay vào đó, hãy sử dụng địa chỉ email hiện tại của tôi</a>      
+                </div>
+              </div>
+              
+              <div class="form-group row">
+              </div>
+
+              <div class="form-group mt-5 row">
+                <div class="col-5 mr-auto p-0">
+                  <input type="password" class="form-control" name="password" id="password" placeholder="Mật khẩu"style="border: none;border-bottom: #ccc solid 1px;">
+                </div>
+                <div class="col-5 p-0">
+                  <input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Xác nhận"style="border: none;border-bottom: #ccc solid 1px;">
+                </div>
+                <div class="col-1 p-0">
+                  <i class="fa fa-eye-slash d-flex text-center h-100 justify-content-center align-items-center" id="hidePass"></i>
+                </div>
+                <small id="passwordHelpId" class="form-text text-muted">Sử dụng 8 ký tự trở lên và kết hợp chữ cái, chữ số và biểu tượng</small>
+              </div>
+
+              <div class="form-check mt-3 mb-3">
+                <label class="form-check-label">
+                  <input type="checkbox" class="form-check-input" name="" id="passwordHide" value="checkedValue">
+                  Hiện mật khẩu
+                </label>
+              </div>
+
+              <div class="form-group row justify-content-between" style="margin-top: 6rem;">
+                <div class="col-sm-4">
+                  <a href="#" class="text-decoration-none text-primary">Đăng nhập</a>
+                </div>
+                <div class="col-4">
+                  <button type="button" class="btn btn-primary submit-btn">Tiếp theo</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        <div class="col-5 right-side px-4 text-center">
+          <div class="row h-100">
+            <img src="https://ssl.gstatic.com/accounts/signup/glif/account.svg" alt="" class="w-100">
+            <span>Một tài khoản. Hoạt động trên mọi sản phẩm và dịch vụ của Google.</span>
+          </div>          
+        </div>
+      </div>
+    </div>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+  <script>
+    $(document).ready(function(){
+      const app = {
+        handle: function(){
+          const _this = this
+          $('.submit-btn').click(function(e){
+            if(_this.validatePass($('#password').val()))
+              if(_this.validateConfirmPass())
+                window.location.href = 'index2.html'
+              else  
+                window.alert("Xac nhan mat khau sai")
+            else
+              window.alert("Mat khau it hon 8 chu so, hoac khong co chu cai, hoac khong co so !")
+          })
+
+          $('#passwordHide').click(function(){
+            _this.hidePass()
+          })
+
+        },
+        validatePass:function(value){
+          if(value.length >= 8)
+          {            
+            let logic1 = 0 
+            let logic2 = 0            
+            for(let i = 0; i < value.length; i++)
+            {
+              if(isNaN(Number(value[i])))
+                logic1 = 1
+              else
+                logic2 = 1
+            }
+            if(logic1 == logic2)             
+              return true
+            else
+              return false
+          }
+          else  
+           return false;
+        },
+        validateConfirmPass: function(){
+          if($('#password').val() == $('#confirmPassword').val())
+            return true
+          else 
+            return false
+        },
+        hidePass: function(){
+          if($('#passwordHide:checked').length === 1)
+          {
+            $('#hidePass').removeClass('fa-eye-slash')
+            $('#hidePass').addClass('fa-eye')
+            $('#password').attr('type', 'text')
+            $('#confirmPassword').attr('type', 'text')
+          }
+          else
+          {
+            $('#hidePass').remove('fa-eye')
+            $('#hidePass').addClass('fa-eye-slash')
+            $('#password').attr('type', 'password')
+            $('#confirmPassword').attr('type', 'password')
+          }
+        }
+      }
+      app.handle()
+    })
+  </script>
+</html>

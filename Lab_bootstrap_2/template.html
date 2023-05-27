@@ -16,6 +16,23 @@
       .bg-second{
         background-color: rgb(23,19,71);
       }
+      @keyframes fadeIn {
+        0%{
+          opacity: 0;
+          visibility: hidden;
+          -webkit-transform: translate3d(0, 40px, 0);
+          transform: translate3d(0, 40px, 0);
+        }
+        100%{
+          visibility: visible;
+          opacity: 1;
+          -webkit-transform: none;
+          transform: none;
+        }
+      }
+      .animate-fade{
+        animation: fadeIn 4s linear;
+      }
     </style>
   </head>
   <body>
@@ -40,7 +57,7 @@
         </div>
       </div>
 
-      <div class="row bg-light px-5 py-5 justify-content-center">
+      <div class="row bg-light px-5 py-5 justify-content-center animate-fade">
           <ul class="list-group justify-content-center w-50">
             <li class="list-group-item d-flex justify-content-center align-items-center border-0 bg-light">
               <span class="badge badge-success p-2 badge-pill d-block">Get started</span>
@@ -352,4 +369,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
+  <script>
+    $(document).ready(function(){
+      window.onscroll(function(e){
+      })
+    })
+  </script>
 </html>
